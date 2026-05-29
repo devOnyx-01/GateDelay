@@ -37,6 +37,7 @@ import { ApiKeysModule } from './api-keys/api-keys.module';
 import { AppCacheModule } from './cache/cache.module';
 import { NotificationModule } from './notifications/notification.module';
 import { TradeEngineModule } from './trade-engine/trade-engine.module';
+import { VerificationModule } from './verification/verification.module';
 
 @Module({
   imports: [
@@ -95,6 +96,7 @@ import { TradeEngineModule } from './trade-engine/trade-engine.module';
     AppCacheModule,
     NotificationModule,
     TradeEngineModule,
+    VerificationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
