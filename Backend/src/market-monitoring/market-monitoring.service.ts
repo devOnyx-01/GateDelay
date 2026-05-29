@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { MarketHealth, MarketMetric, MonitoringAlert } from './market-monitoring.entity';
 
 @Injectable()
@@ -143,7 +143,7 @@ export class MarketMonitoringService {
   private pushAlert(input: Omit<MonitoringAlert, 'id' | 'createdAt'>) {
     this.alerts.unshift({
       ...input,
-      id: uuidv4(),
+      id: randomUUID(),
       createdAt: new Date().toISOString(),
     });
 
